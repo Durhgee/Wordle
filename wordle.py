@@ -52,7 +52,7 @@ def wordle():
     while replay == True:
         char_bank = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         i = random.randint(0, 1002)
-        with open("word_list") as word_list:
+        with open("word_list.txt") as word_list:
             selected_word = word_list.readlines()
             selected_word = selected_word[i].strip()
         print(list(selected_word))
@@ -65,7 +65,7 @@ def wordle():
                 print("Please input a 6-letter word.")
                 guess = input("Guess: ")
 
-            with open("word_list") as word_list:
+            with open("word_list.txt") as word_list:
                 temp = word_list.readlines() #creates a list that contains all possible words from the word list
                 for w in range(len(temp)):
                     temp[w] = temp[w].strip() # creates a list that contains all possible words, but without the \n
